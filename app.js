@@ -6,7 +6,7 @@ const exphbs = require('express-handlebars')
 const homeRouter = require ('./routes/home')
 const addPostRouter = require('./routes/addPost')
 const registerRouter = require('./routes/register')
-const loginRoter = require('./routes/login')
+const loginRouter = require('./routes/login')
 
 const PORT = process.env.PORT || 3000
 const URL = 'mongodb://localhost:27017/blog'
@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(homeRouter)
 app.use(addPostRouter)
 app.use(registerRouter)
-app.use(loginRoter)
+app.use(loginRouter)
 
 
 async function start() {

@@ -21,7 +21,6 @@ router.post('/register', async (req, res) => {
     } catch {
         res.redirect('/register')
     }
-    
 })
 
 
