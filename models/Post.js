@@ -13,6 +13,9 @@ const PostSchema = new Schema({
     },
     idAutor: { 
         type: String
+    },
+    image: { 
+        type: String
     }
 });
 

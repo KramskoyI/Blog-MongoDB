@@ -6,7 +6,7 @@
     <div class="erDiv">
         <p class="errorAdd">{{errorAdd}}</p>
     </div>
-    <form action="/addPost" method="POST"  >
+    <form action="/addPost" method="POST"  enctype="multipart/form-data">
 
     <label for="titel" >Title:</label>
     
@@ -20,7 +20,7 @@
     
     <input type="text"  name="tag" id="tag" class="input" >
     
-    {{!-- <input type="file" name="filedata"> --}}
+    <input type="file" name="filedata">
     
     <button type="submit" class="btn btn-secondary">Add Post</button>
 
@@ -28,7 +28,7 @@
 
     {{else}}
 
-    <form action="/addPost" method="POST" >
+    <form action="/addPost" method="POST" enctype="multipart/form-data">
 
     <label for="titel" >Title:</label>
     
@@ -42,7 +42,7 @@
     
     <input type="text"  name="tag" id="tag" class="input" >
     
-    {{!-- <input type="file" name="filedata"> --}}
+    <input type="file" name="filedata">
     
     <button type="submit" class="btn btn-secondary">Add Post</button>
 
