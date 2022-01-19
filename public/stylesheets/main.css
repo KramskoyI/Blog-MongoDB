@@ -63,3 +63,10 @@ a:hover{
     font-size: 20px;
     color: rgb(180, 180, 180);
 }
+.login_windows{
+    display: flex;
+    margin: 40px auto;
+    gap: 10px;
+    flex-direction: column;
+    width: 30%;
+}

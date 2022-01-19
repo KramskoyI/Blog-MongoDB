@@ -37,15 +37,6 @@ router.get('/', jsonParser, async (req, res) => {
     users =  await User.find({})
     posts = await Post.find({})
     
-    const allPosts = posts.map(function(post){
-        const user = users.find(user => user.id == post.idAutor)
-        post.autor = user.name + user.lastName
-        
-    })
-
-    console.log(allPosts)
-    const tag = req.query.tag
-
     if(tag !=''){
         postsTag = posts.filter(function(post) {
             for (var i = 0; i < post.tag.length; i++) {
