@@ -1,0 +1,18 @@
+
+{{#each post}}
+  <div class="read_window">
+    <h2> {{tit}}</h2>  
+    {{#if image}}
+      <div >
+        <img src="/images/{{image}}"class="img">
+      </div>
+    {{else}}
+      <img src="https://via.placeholder.com/200x200/258DC8/E0F6FD" alt="">
+    {{/if}}
+    <p class="description" maxlength="10" >Description: <br> {{description}}</p>
+    <div >
+      <span>Tag:<a href="/?tag={{tag}}"> {{tag}} </a> </span>
+    </div>
+  </div>
+{{/each}}
+  

@@ -1,0 +1,50 @@
+
+
+{{#if user }}
+    <nav class="navbar navbar-light bg-light head">
+      <form class="container-fluid justify-content-space-around">
+        <div>
+          <button type="submit" class="btn btn-sm btn-outline-secondary"><a href="/addPost">Add Post</a></button>
+        </div>
+        
+        <div>
+          <span class="navbar-text ">
+          Welcom {{user}}
+          </span>
+          <form action="/logout?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-sm btn-outline-secondary">Log Out</button>
+    </form>
+        </div>
+      </form>
+    </nav>
+{{else}}
+  <nav class="navbar navbar-light bg-light">
+    <form class="container-fluid justify-content-space-around">
+      <div>
+        <button type="submit" class="btn btn-sm btn-outline-secondary"><a href="/register">Register</a></button>
+        <button type="submit" class="btn btn-sm btn-outline-secondary"><a href="/login">Login</a></button>
+      </div>
+    <span class="navbar-text ">Books Blog</span>
+    </form>
+  </nav>    
+{{/if}}
+
+<div class="posts">
+  {{#each posts}}
+    <div class="post_card">
+          
+      {{#if image}}
+        <div >
+          <img src="/images/{{image}}"class="img">
+        </div>
+      {{else}}
+        <img src="https://via.placeholder.com/200x200/258DC8/E0F6FD" alt="">
+      {{/if}}
+      <h2> {{titel}}</h2>
+      <p class="description" maxlength="10" >Description:{{description}}</p>
+      <div >
+        <button type="button" class="btn btn-secondary"><a href="/readPost?id={{id}}"> Read Post </a></button>
+      </div>
+    </div>
+  {{/each}}
+</div> 

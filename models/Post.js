@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
-    titel: { 
+    tit: { 
         type: String 
     },
     description: { 
         type: String 
     },
     tag: { 
-        type: String
+        type: Array
     },
     idAutor: { 
         type: String

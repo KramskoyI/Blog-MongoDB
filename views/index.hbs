@@ -28,3 +28,70 @@
     </form>
   </nav>    
 {{/if}}
+
+
+<div class="posts">
+  
+  {{#if tag}}
+  
+    {{#each postsT}}
+      
+      <div class="post_card">
+          
+        {{#if image}}
+          <img src="/images/{{image}}" class="img">
+        {{else}}
+          <img src="https://via.placeholder.com/200x200/258DC8/E0F6FD" alt="" >
+        {{/if}}
+        <h2> {{tit}}</h2>
+        <p class="description" maxlength="10"> Description: <br> {{description}}</p>
+        <div >
+          <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/readPost?id={{id}}"> Read Post </a></button>
+          <br>
+          <span>Tag:
+            {{#each tag}}
+            <a href="/?tag={{this}}"> {{this}} </a> 
+            {{/each}} 
+          </span>
+        </div>
+        
+      </div>
+      
+    {{/each}}
+
+  {{else}}
+
+      {{#each posts}}
+      <div class="post_card">
+          
+        {{#if image}}
+          <div class="imgBlock">
+            <img src="/images/{{image}}"class="img">
+          </div>
+        {{else}}
+          <img src="https://via.placeholder.com/200x200/258DC8/E0F6FD" alt="">
+        {{/if}}
+        <h2> {{title}}</h2>
+        <p class="description" maxlength="10" >Description: <br> {{description}}</p>
+        
+        <div >
+          <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/readPost?id={{id}}"> Read Post </a></button>
+          <br>
+          <span>Tag:
+            {{#each tag}}
+            <a href="/?tag={{this}}"> {{this}} </a> 
+            {{/each}} 
+          </span>
+        </div>
+      </div>
+      {{/each}}
+
+  {{/if}}
+
+</div> 
+
+<div class="paginatContainer">
+  {{#each pages}}
+  <a href="/?page={{page}}"  id="navLink" class="pag_page"> {{page}}</a>
+  {{/each}}
+</div>

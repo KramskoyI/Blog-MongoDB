@@ -21,11 +21,13 @@ router.get('/addPost', (req, res) =>{
 router.post('/addPost', jsonParser, (req, res) => {
     let filedata  = req.file ? req.file.filename : null
 
+    const tags = req.body.tag
+    const arrTags = tags.split(',')
 
     const post = new Post({
-        title: req.body.title,
+        tit: req.body.title,
         description: req.body.description,
-        tag: req.body.tag,
+        tag: arrTags,
         idAutor: req.user.id,
         image: filedata
     })
