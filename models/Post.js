@@ -12,7 +12,7 @@ const PostSchema = new Schema({
         type: Array
     },
     idAutor: { 
-        type: String
+        type: Schema.ObjectId, ref: 'User'
     },
     image: { 
         type: String

@@ -14,8 +14,6 @@ const  { User } = require('../models/User')
 const  { Post } = require('../models/Post')
 let users
 let posts
-let post
-
 
 initializePassport(
     passport, 
@@ -36,8 +34,8 @@ router.use(methodOverride('_method'))
 
 router.get('/', jsonParser, async (req, res) => {
   users =  await User.find({})
-  posts = await Post.find({})
-  // posts = await Post.find({}).populate('authorId')
+  // posts = await Post.find({})
+  posts = await Post.find({}).populate('idAutor')
 
   const tag = req.query.tag
   
