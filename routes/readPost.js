@@ -6,7 +6,6 @@ const  { Post } = require('../models/Post')
 router.get('/readPost', async (req, res, ) => {
     const id = req.query.id;
     const post = await Post.find({_id: id})
-    console.log(post)
     res.render('readPost', {post})
 })
 
