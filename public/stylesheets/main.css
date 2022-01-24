@@ -70,3 +70,21 @@ a:hover{
     flex-direction: column;
     width: 30%;
 }
+.errorAdd {
+    color: #000;
+    text-align: center;
+    line-height: center;
+    font-size: 25px;
+}
+.erDiv {
+    display: block;
+    position: absolute;
+    margin: 350px 673px;
+    background-color: rgb(255, 0, 0);
+    width: 20%;
+    border-radius: 5px;
+}
+.addTitle {
+    text-align: center;
+    line-height: center;
+}

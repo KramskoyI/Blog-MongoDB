@@ -5,7 +5,6 @@ const passport = require('passport')
 
 /* GET Log In page. */
 router.get('/login', async (req, res) => {
-    
     res.render('login')
 })
 

@@ -13,7 +13,7 @@ const jsonParser = express.json()
 const  { User } = require('../models/User')
 const  { Post } = require('../models/Post')
 let users 
-let posts 
+// let posts 
 
 initializePassport(
     passport, 
@@ -34,18 +34,18 @@ router.use(methodOverride('_method'))
 
 router.get('/', jsonParser, async (req, res) => {
   users =  await User.find({})
-  posts = await Post.find({}).populate('idAutor')
-  
+  let posts = await Post.find({}).populate('idAutor')
+  console.log(posts)
   const tag = req.query.tag
   
   if(tag !='') {
-        postsTag = posts.filter(function(post) {
-            for (var i = 0; i < post.tag.length; i++) {
-            if (post.tag[i] == tag) {
-                return post;
-            }
-            }
-        })
+    postsTag = posts.filter(function(post) {
+      for (var i = 0; i < post.tag.length; i++) {
+        if (post.tag[i] == tag) {
+          return post;
+        }
+      }
+    })
   }
   
   const postsOnPage = 6
