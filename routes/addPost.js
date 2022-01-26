@@ -18,7 +18,7 @@ router.get('/addPost', (req, res) =>{
     res.render('addPost', { title: 'addPost' })
 })
 
-router.post('/addPost', jsonParser, (req, res) => {
+router.post('/addPost', jsonParser, async (req, res) => {
     let filedata  = req.file ? req.file.filename : null
 
     const tags = req.body.tag
@@ -35,7 +35,7 @@ router.post('/addPost', jsonParser, (req, res) => {
     if (post.title === ''|| post.description === '') {
         res.render('addPost', { errorAdd : 'You did not write Title or Description!!!'})
     } else {
-        post.save()
+        await post.save()
         res.redirect('/')
     }
 })

@@ -13,7 +13,7 @@ const jsonParser = express.json()
 const  { User } = require('../models/User')
 const  { Post } = require('../models/Post')
 let users 
-// let posts 
+
 
 initializePassport(
     passport, 
@@ -34,8 +34,9 @@ router.use(methodOverride('_method'))
 
 router.get('/', jsonParser, async (req, res) => {
   users =  await User.find({})
+   
   let posts = await Post.find({}).populate('idAutor')
-  console.log(posts)
+
   const tag = req.query.tag
   
   if(tag !='') {
@@ -74,7 +75,7 @@ router.get('/', jsonParser, async (req, res) => {
   if (req.isAuthenticated()) {
       res.render('index', { user: req.user.name, posts, postsT, pages, tag})
   } else {
-      res.render('index', {posts,postsT, pages, tag})
+      res.render('index', {posts, postsT, pages, tag})
   }
 })
 

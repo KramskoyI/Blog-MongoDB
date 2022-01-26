@@ -9,8 +9,9 @@ const registerRouter = require('./routes/register')
 const loginRouter = require('./routes/login')
 const readPostRoter = require('./routes/readPost')
 
-const PORT = process.env.PORT || 3000
 const URL = 'mongodb://localhost:27017/blog'
+const PORT = process.env.PORT || 3000
+
 
 const app = express()
 

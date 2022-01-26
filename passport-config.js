@@ -30,9 +30,9 @@ function initialize(passport) {
   //   return done(null, getUserById(id))
   // })
   passport.serializeUser((user, done) => done(null, user._id))
-    passport.deserializeUser(async (id, done) => {
-        return done(null, await User.findById(id))
-    })
+  passport.deserializeUser(async (id, done) => {
+      return done(null, await User.findById(id))
+  })
 }
 
 module.exports = initialize
